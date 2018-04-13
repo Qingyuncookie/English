@@ -1,0 +1,12 @@
+\documentclass{article}
+\usepackage{multicol}
+\usepackage[top=1in,bottom=1in,left=1.25in,right=1.25in]{geometry}
+\usepackage{lscape}
+\author{li Qingyun}
+\date{April 13,2018}
+\title{Nighttime Haze Removal}
+\begin{document}
+\maketitle
+\par Today,I find a paper about nighttime haze removal.In deed,most of existing dehazing methods use models that are formulated to describe haze in daytime,but there are also a lot of nighttime images needed to dehaze. 
+\par And the daytime dehazing methods always first estimate the atmospheric light and it's effective but it is not well equipped to correct nighttime scenes.Furthermore,the atmospheric light can't be obtained from the brightest area in nighttime images.For explaining the differece to the daytime haze removal,the authors introduce a new model which is a liner combination of three terms,the direct transmission,airlight and glow.If you want to know they how to solve this problem,please pay attention to the next composition.
+\end{document}
