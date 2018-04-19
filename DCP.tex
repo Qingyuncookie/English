@@ -1,0 +1,13 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[top=1in,bottom=1in,left=1.25in,right=1.25in]{geometry}
+\usepackage{lscape}
+\author{Qingyun Li}
+\date{April 19,2018}
+\title{DCP}
+\begin{document}
+\maketitle
+\par If you learn some knowledge about image dehazing, you would known that it's crucial for haze removal that the discovery of DCP by Kaimng He. Today, we will learn the DCP in particular and I hope that it could attract you.
+\par DCP-dark channel prior. It was proposed after the authors dealt with about 5000 outdoor free-haze images. They find that some pixels have a low intensity in at least one color channel, except for the sky region.And from 5000 dark channels of outdoor haze-free images, it was demonstrated that about 75 percent of the pixels in the dark channels have zero values and 90 percent of the pixels have values below 35. In conclusion, the approximation to zero for the pixel value of the dark channel is called DCP.
+\end{document}
