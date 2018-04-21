@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{graphicx}
+\graphicspath{{/home/li/图片/}}
+\usepackage{multicol}
+\usepackage{lscape}
+\author{Qingyun Li}
+\date{April 21,2018}
+\title{Transmission Map}
+\begin{document}
+\maketitle
+\par Last time, we talked about DCP. Due to this doscovery, the transmssion map$\tilde{t}(x) $is obtained from the DCP accordding to the equation:
+\begin{equation}
+\tilde{t}(x)=1-\min\limits_{y\in\Omega(x)}(\min\limits_{c}\frac{I^{c}(y)}{A^c})
+\end{equation}
+\par However, in fact, the pixel value of dark channel, $J^{dark}(x)$, is not equivalent to zero completely. So, in order to make the image looked natural, we need to retain a small amount of haze by using a constant $\omega$ (0<$\omega$<1):\begin{equation}
+\tilde{t}(x)=1-\omega \min\limits_{y\in\Omega(x)}(\min\limits_{c}\frac{I^{c}(y)}{A^c})
+\end{equation}
+And inadvertently, we compensate for the under-estimation of $\tilde{t}(x)$ by multiplying $\omega$. 
+\begin{figure}[htbp]
+\begin{minipage}{0.5\linewidth}
+\centering{}
+\includegraphics[width=0.9\linewidth]{image1.png}\\
+\caption{haze image}\label{image} 
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\linewidth}
+\centering{}
+\includegraphics[width=0.9\linewidth]{map1.png}\\
+\caption{transmission map}\label{map}
+\end{minipage} 
+\end{figure}
+\end{document}
