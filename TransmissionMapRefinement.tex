@@ -1,0 +1,19 @@
+\documentclass{article}
+\usepackage{graphicx}
+\graphicspath{{/home/li/图片/}}
+\usepackage{multicol}
+\usepackage{lscape}
+\author{Qingyun Li}
+\date{April 23,2018}
+\title{Transmission Map Refinement}
+\begin{document}
+\maketitle
+\par Incorrect estimation for the transmission map can lead to some problems such as false textures and blocking artifacts. Therefore, many methods have been developed to further sharpen the transmission map and improve the accuracy. Such as soft matting, cross-bilateral filter and guided filter that use a haze color image as a guidance signal, and these all attained good performance. Especially soft matting, however, it has a criticial defect which is the speed. It can't be implemented in the real-time due to this. And the cross-bilateral and guided filters showed comparable second-best performance. And the guided filter has low complexity compared to other methods. 
+\begin{figure}[htbp]
+\begin{minipage}{1\linewidth}
+\centering{}
+\includegraphics[width=0.9\linewidth]{time.png}\\
+\caption{Comparison of time consumption}\label{time} 
+\end{minipage} 
+\end{figure}
+\end{document}
