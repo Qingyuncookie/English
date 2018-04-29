@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\graphicspath{{/home/li/图片/}}
+\usepackage{cite}
+\usepackage{lscape}
+\usepackage{multicol}
+\author{Qingyun Li}
+\date{April 29, 2018}
+\title{Patch Size}
+\begin{document}
+\maketitle
+ \par It's fattal of the estimation of transmission map for the image dehazing, the equation as you see at (1).
+ \begin{equation}
+\tilde{t}(x)=1-\min\limits_{y\in\Omega(x)}(\min\limits_{c}\frac{I^{c}(y)}{A^c})
+\end{equation}
+\par And in fact, another key parameter in the algorithm is the patch size in (1). On one hand, the dark channel prior\cite{He2011Single} becomes better for a larger patch size because the probability that a patch contains a dark pixel is increased. We can see at the Fig.\ref{patch size}: the larger the patch size, the darker the dark channel.
+\begin{figure}[htbp]
+\begin{minipage}{0.3\linewidth}
+\includegraphics[width=1\linewidth]{a.png}\\
+\label{fig:side:a} 
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\linewidth}
+\includegraphics[width=1\linewidth]{b.png}\\
+\label{fig:side:b}
+\end{minipage} 
+\hfill
+\begin{minipage}{0.3\linewidth}
+\includegraphics[width=1\linewidth]{c.png}\\
+\label{fig:side:c} 
+\end{minipage}
+\caption{A haze-free image and its dark channels using 3×3 and 15×15 patches, respectively.} \label{patch size}
+\end{figure}
+\bibliographystyle{plain}
+\bibliography{single}
+\end{document}
