@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{picinpar,graphicx}
+\usepackage{multicol}
+\usepackage{lscape}
+\author{Qingyun Li}
+\date{May 2, 2018}
+\title{Atmosphric Light}
+\begin{document}
+\maketitle
+ \par According to the DCP\cite{He2011Single} approximation of $J^{dark}$ $\approx$0, the transmssion map $\tilde{t}(x)$ can be represented as
+\begin{equation}
+\tilde{t}(x)=1-\min\limits_{y\in\Omega(x)}(\min\limits_{c}\frac{I^{c}(y)}{A^c})
+\end{equation}
+\par Here, the atmosphric A needs to be estimated. And the Table 1 lists the conventional methods that are uesd to estimate atmosphric light. 
+\begin{table}[htbp]
+\centering
+\caption{Conventional methods used to estimate A}
+\begin{tabular}{|c|c|c|}
+\hline
+Parameter & Selection criterion & Reference \\
+\hline 
+p=0 & Highest intensity & \cite{Long2013Fast} \\
+\hline 
+p=0.1 & Highest intensity & \cite{He2011Single} \\
+\hline 
+p=0.2 & Highest intensity & \cite{Xiao2012Gan} \\
+\hline 
+p=0.1 & Minimum entropy & \cite{Jeong2013The} \\
+\hline
+\end{tabular} 
+\end{table}
+\bibliographystyle{plain}
+\bibliography{single}
+\end{document}
