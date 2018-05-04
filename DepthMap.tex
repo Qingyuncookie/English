@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\graphicspath{{/home/li/图片/}}
+\usepackage{cite}
+\usepackage{lscape}
+\usepackage{multicol}
+\author{Qingyun Li}
+\date{April 29, 2018}
+\title{Depth Map}
+\begin{document}
+\maketitle
+ \par Last time, we talked about atmosphric light. To quantitativly evaluate A estimation methods, we used the foggy rode image database (FRIDA) \cite{Tripathi2012Removal} which consists of pairs of synthetic color and depth map such as Fig.~\ref{depth map}. At Wiki, the depth map is explanned as "In 3D computer graphics a depth map is an image or image channel that contains information relating to the distance of the surfaces of scene objects from a viewpoint". 
+\begin{figure}[htbp]
+\begin{minipage}{0.5\linewidth}
+\includegraphics[width=0.9\linewidth]{image3.png}\\
+\caption{Cubic Structure}\label{original image} 
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\linewidth}
+\includegraphics[width=0.9\linewidth]{image3depth.png}\\
+\caption{Depth Map}\label{depth map}
+\end{minipage} 
+\end{figure}
+\bibliographystyle{plain}
+\bibliography{single}
+\end{document}
