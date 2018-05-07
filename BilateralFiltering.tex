@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\graphicspath{{/home/li/图片/}}
+\usepackage{cite}
+\usepackage{lscape}
+\usepackage{multicol}
+\author{Qingyun Li}
+\date{May 7, 2018}
+\title{Bilateral Filtering}
+\begin{document}
+\maketitle
+ \par A bilateral filter is a non-linear, edge-preserving, and noise-reducing smoothing filter for images. It replaces the intensity of each pixel with a weighted average of intensity values from nearby pixels. This weight can be based on a Gaussian distribution. Crucially, the weights depend not only on Euclidean distance of pixels, but also on the radiometric differences. This preserves sharp edges, as is shown at Fig.~\ref{image}.
+ \par In mathematics, the Euclidean distance or Euclidean metric is the "ordinary" straight-line distance between two points in Euclidean space. And the Euclidean distance between points p and q is the length of the line segment connecting them.
+\begin{figure}[htbp]
+\begin{minipage}{1\linewidth}
+\centering
+\includegraphics[width=0.7\linewidth]{Bilateral_Filter.png}\\
+\caption{Left: original image. Right: image processed with bilateral filter}\label{image} 
+\end{minipage}
+\end{figure}
+\end{document}
