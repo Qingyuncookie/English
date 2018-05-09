@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\graphicspath{{/home/li/图片/}}
+\usepackage{cite}
+\usepackage{lscape}
+\usepackage{multicol}
+\author{Qingyun Li}
+\date{May 9, 2018}
+\title{Histogram Processing}
+\begin{document}
+\maketitle
+ \par Histograms are the basics for numerous spatial domain processing techniques. Histogram manipulation can be used for image enhancement. In addition to providing useful image statistics, the information inherent in histograms also is useful in other image processing applications, such as image compression and segmentation. 
+ \par Histogram equalization is a commonly used method to enhance contrast. Foggy images have low contrast and a narrow, centralized unimodal histogram. Therefore, it is possible to use histogram equalization to make histograms a balanced form of distribution and extended range to enhance contrast. Therefore, we could use the histogram equlization to do the image haze removal, but this methods also have some disadvantages. So Kim\cite{Kim2001An} proposed local histogram equalization. The basic idea is to define a sub-block of the image and the histogram of the sub-block is determained, therefore we can do the histogram equalization at the sub-block. 
+\bibliographystyle{plain}
+\bibliography{single}
+\end{document}
