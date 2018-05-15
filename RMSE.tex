@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{picinpar,graphicx}
+\usepackage{multicol}
+\usepackage{lscape}
+\usepackage{cite}
+\author{Qingyun Li}
+\date{May 15, 2018}
+\title{RMSE}
+\begin{document}
+\maketitle
+ \par There are five methods which the researchers chosen to do the transmission map refinement\cite{Lee2016A}, Bilateral, Gaussion, Soft matting, Cross-bilateral and Guided filter. At this paper, Lee \emph{et al.}\cite{Lee2016A} compare the average root-mean-square eror(RMSE) obtained by the five methods to evalute the quality of the images.
+ \par We can see at the Table 1, the soft matting performed the best, and the cross-bilateral and guided filters showed comparable second-best performance.
+\begin{table}[htbp]
+\centering
+\caption{Comparison of the RMSE values obtained by five methods}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multicolumn{5}{|c|}{RMSE of transmission map} \\
+\hline 
+Gaussion & Bilateral & Soft matting & Cross-Bilateral & Guided filter \\
+\hline 
+0.2109 & 0.2057 & 0.1826 & 0.1971 & 0.1969 \\
+\hline 
+\end{tabular} 
+\end{table}
+\bibliographystyle{plain}
+\bibliography{single}
+\end{document}
