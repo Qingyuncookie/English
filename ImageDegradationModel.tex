@@ -5,19 +5,32 @@
 \usepackage{lscape}
 \usepackage{cite}
 \author{Qingyun Li}
-\date{May 23, 2018}
+\date{May 24, 2018}
 \title{Image Degradation}
 \begin{document}
 \maketitle
- \par Last time, we talked about the differece of fog and smog, today, we will learn how does the degradation image developed. 
  \par The atmosphric light and the light reflected by the object itself combine with each other.And then, they enter the image acquisition device to form image.As is shown at Fig.~\ref{model1} So the suspended particles in the air and the incident light all effect the scattering effect of the atmosphere. When fog weather occurs, the amount of suspended particles increases. Therefore, in the process of image collection, the scattering and absorption of the radiated light is strengthened, and this resulted the color degradation and blurred details in the image.
- \begin{figure}[htbp]
+\begin{figure}[htbp]
 \begin{minipage}{1\linewidth}
-\centering{}
+ \centering{}
 \includegraphics[width=0.7\linewidth]{model1.jpeg}\\
-\caption{Atmospheric optical imaging model}\label{model1}
+ \caption{Atmospheric optical imaging model}
+\label{model1}
 \end{minipage}
 \end{figure}
-\bibliographystyle{plain}
-\bibliography{single}
+ \par The degradation model is derived from the “Atmospheric light scattering model”, proposed by McCartney \emph{et al.}~\cite{Mccartney1976Optics}. A haze image formed as show in Fig.~\ref{model2} can be mathematically modeled as follows
+\begin{equation}
+I(x)=J(x)t(x)+A(1-t(x)) \label{eq1}
+\end{equation}
+\begin{figure}[htbp]
+\begin{minipage}{1\linewidth}
+ \centering{}
+\includegraphics[width=0.7\linewidth]{model2.jpg}\\
+ \caption{Formation of a hazy removal}
+\label{model2}
+\end{minipage}
+\end{figure}
+\par This degradation model is consist of two parts, the first term of Eq.~\ref{eq1}, $J(x)t(x)$is the direct attenuation, and the second term of Eq.~\ref{eq1}, $A(1-t(x))$is the airlight.
+ \bibliographystyle{plain}
+ \bibliography{single}
 \end{document}
