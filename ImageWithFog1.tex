@@ -67,20 +67,20 @@ strong fog & <50 \\
 \begin{equation}
 I(x)=J(x)t(x)+A(1-t(x)) \label{eq1}
 \end{equation}
+\par This degradation model is consist of two parts, the first term of Eq.~\ref{eq1}, $J(x)t(x)$is the direct attenuation, and the second term of Eq.~\ref{eq1}, $A(1-t(x))$is the airlight.
+\par The attenuation model means that the light reflection from the surface of the object encounters the sudpended particles and scatters, and part of the light deviates from the original direction, therefore, the incident light attenuates. This degree of attenuation is changes following the distance between the receiving device and the object. As the distance increases, the attenuation decays exponentially. The physical model is shown as Fig.~\ref{model2}.
 \begin{figure}[htbp]
  \centering{}
 \includegraphics[width=0.7\linewidth]{model2.jpg}\\
- \caption{Formation of a hazy removal}
+ \caption{The attenuation model}
 \label{model2}
 \end{figure}
-\par This degradation model is consist of two parts, the first term of Eq.~\ref{eq1}, $J(x)t(x)$is the direct attenuation, and the second term of Eq.~\ref{eq1}, $A(1-t(x))$is the airlight.
-\par The attenuation model means that the light reflection from the surface of the object encounters the sudpended particles and scatters, and part of the light deviates from the original direction, therefore, the incident light attenuates. This degree of attenuation is changes following the distance between the receiving device and the object. As the distance increases, the attenuation decays exponentially. The physical model is shown as Fig.~\ref{model2}.
-\par  
+\par The reflected light of the scene spots will attenuates because of the suspended particles, and at the same time, the sunlight and the reflected light of the ground will also scatter with the particles. This lead to the some of these light enters the receiving device and participates in imaging. These light called airlight. The physical model is shown as Fig.~\ref{model3}.  
 \begin{figure}[htbp]
  \centering{}
 \includegraphics[width=0.7\linewidth]{model3.jpg}\\
- \caption{Formation of a hazy removal}
-\label{model2}
+ \caption{Airlight}
+\label{model3}
 \end{figure} 
  \bibliographystyle{plain}
  \bibliography{single}
