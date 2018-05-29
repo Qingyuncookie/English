@@ -4,27 +4,36 @@
 \usepackage{times}
 \usepackage{epsfig}
 \usepackage{graphicx}
+\usepackage{subfig}
+
 \graphicspath{{/home/li/图片/}}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{fontspec}
 
+\usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
 
-\usepackage[breaklinks=true,bookmarks=false]{hyperref}
+\cvprfinalcopy % *** Uncomment this line for the final submission
 
-\cvprfinalcopy 
-
-\def\cvprPaperID{****} 
+\def\cvprPaperID{****} % *** Enter the CVPR Paper ID here
 \def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
 
-\setcounter{page}{4321}
-\author{Qingyun Li\\
-Changan University\\
-May 27, 2018}        
-\date{May 25, 2018}
-\title{Image With Fog}
+\ifcvprfinal\pagestyle{empty}\fi
+\setcounter{page}{1}
+
 \begin{document}
 
+\author{Qingyun Li\\\\
+May 27, 2018}        
+\title{Image With Fog}
+
 \maketitle
+
+\begin{abstract}
+ \par At present, the haze removal algorithm is mainly divided into two aspects, one is based on image enhancement (non-physical model) method, this method doesn’t take into account the image degradation mechanism. It’s just according to our needs for image enhancement processing. The advantage is that it has matured and applied to various fields skillfully. But it is easy to lose the detailed information in the image, and the outcome isn’t satisfied. The second one is based on the image restoration (physical model) algorithm. Through researching and analyzing the reasons for the decline of image quality, we establish the image degradation to achieve the purpose of haze removal. this algorithm directly hits our actual needs and keeps the details in the image as much as possible. The defogging effect is better and the restored image quality is high.
+\par In this paper, We introduced image haze removal algorithm based on physical model. The physical model-based algorithm focuses on a classical haze removal algorithm based on the dark channel prior proposed by He in 2009. The algorithm process consists of four main steps, including: atmospheric light estimation, transmission estimation, transmission refinement, and image reconstruction. The estimation of the transmission is of great significance to the image restoration. There are guided filtering, soft mapping, and cross-bilateral filtering for the transmission refinement. Experiments show that compared with other methods, guided filtering has a sharpening level similar to that of the original image and there is no false texture generation.
+\par Key words: image defogging, dark channel prior, transmission refinement, guide filtering
+\end{abstract}
 
 \section{Formation of fog}
  \par As we all know, fog is a natural weather phenomenon. Especially recent yeays, due to the distruction of the   environment, this phenomenon is more and more serious. The buildings is higher and the air isn't free, all this reasons lead to the formation of the fog. And our common life has been effected seriously. 
@@ -45,6 +54,7 @@ strong fog & <50 \\
 \hline 
 \end{tabular} 
 \end{table}
+
 \section{Smog}
  \par Given that the air pollution has been unprecedentedly severe in recent years, "smog" is more and more widly mentioned by everyone. This word is consist of two words, smoke and fog. We can learn it clearly from these words. Smog is different from fog, we can seen it at Fig.~\ref{difference}, and it's a type of air pollution derived from vehicular emission from internal combustion engines and industrial fumes that react inthe atmosphere with sunlight to form secondary pollutants that also combine with the primary emissions to form photochemical smog.
 \begin{figure}[t]
@@ -54,6 +64,7 @@ strong fog & <50 \\
    \caption{The difference of the fog and smog}
 \label{difference}
 \end{figure}
+
 \section{Atmospheric light scattering model}
  \par The atmosphric light and the light reflected by the object itself combine with each other.And then, they enter the image acquisition device to form image.As is shown at Fig.~\ref{model1} So the suspended particles in the air and the incident light all effect the scattering effect of the atmosphere. When fog weather occurs, the amount of suspended particles increases. Therefore, in the process of image collection, the scattering and absorption of the radiated light is strengthened, and this resulted the color degradation and blurred details in the image.
 \begin{figure}[htbp]
@@ -62,6 +73,7 @@ strong fog & <50 \\
  \caption{Atmospheric optical imaging model}
 \label{model1}
 \end{figure}
+
 \section{Image degradation model}
  \par The degradation model is derived from the “Atmospheric light scattering model”, proposed by McCartney \emph{et al.}~\cite{Mccartney1976Optics}. A haze image formed as show in Fig.~\ref{model1} can be mathematically modeled as follows
 \begin{equation}
@@ -82,6 +94,42 @@ I(x)=J(x)t(x)+A(1-t(x)) \label{eq1}
  \caption{Airlight}
 \label{model3}
 \end{figure} 
- \bibliographystyle{plain}
+
+\section{Haze removal using dark channel prior}
+\subsection{Dark channel prior}
+\par DCP-dark channel prior. It was proposed by He \emph {et al.}~\cite{He2009Single} after they dealt with about 5000 outdoor free-haze images. They find that some pixels have a low intensity in at least one color channel, except for the sky region. And from 5000 dark channels of outdoor haze-free images, it was demonstrated that about 75 percent of the pixels in the dark channels have zero values and 90 percent of the pixels have values below 35. In conclusion, the approximation to zero for the pixel value of the dark channel is called DCP. We can see it at Fig.~\ref{dark1}.
+ \begin{figure}[htbp]
+ \centering{}
+ \subfloat[]{\begin{minipage}{0.5\linewidth}
+\includegraphics[width=0.9\linewidth]{cui.jpg}\\
+ \end{minipage}}
+ \hfill
+\subfloat[]{\begin{minipage}{0.5\linewidth}
+\includegraphics[width=0.9\linewidth]{cuidark.png}\\
+\end{minipage}}
+ \caption{(a) haze-free outdoor image, (b) dark channel}
+\label{dark1}
+\end{figure} 
+\subsection{Patchsize}
+ \par A key parameter in the algorithm is the patch size. On one hand, the dark channel prior becomes better for a larger patch size because the probability that a patch contains a dark pixel is increased. So the larger the patch size, the darker the dark channel. And in fact, we can use a larger patch to exclude false textures from the dark channel. As is shown at Fig.~\ref{dark2}.
+ 
+\begin{figure}[htbp]
+ \subfloat[]{\begin{minipage}{0.25\linewidth}
+\includegraphics[width=0.9\linewidth]{forest.jpg}\\
+ \end{minipage}}
+\subfloat[]{\begin{minipage}{0.25\linewidth}
+\includegraphics[width=0.9\linewidth]{dark3_3.png}\\
+\end{minipage}}
+ \subfloat[]{\begin{minipage}{0.25\linewidth}
+\includegraphics[width=0.9\linewidth]{dark12_12.png}\\
+ \end{minipage}}
+\subfloat[]{\begin{minipage}{0.25\linewidth}
+\includegraphics[width=0.9\linewidth]{dark15_15.png}\\
+\end{minipage}}
+ \caption{Dark channel of various patch size. (a) haze image. Dark channel with the patch size of (b) 3$\times$3, (c) 12$\times$12, (d) 15$\times$15}
+\label{dark2}
+\end{figure}
+
+ \bibliographystyle{ieee}
  \bibliography{single}
 \end{document}
