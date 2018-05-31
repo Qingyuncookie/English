@@ -130,6 +130,28 @@ I(x)=J(x)t(x)+A(1-t(x)) \label{eq1}
 \label{dark2}
 \end{figure}
 
+\subsection{Transmission map}
+\par Due to this doscovery, the transmssion map $\tilde{t}(x) $ is obtained from the DCP accordding to the equation:
+\begin{equation}
+\tilde{t}(x)=1-\min\limits_{y\in\Omega(x)}(\min\limits_{c}\frac{I^{c}(y)}{A^c})
+\end{equation}
+\par However, in fact, the pixel value of dark channel, $J^{dark}(x)$, is not equivalent to zero completely. So, in order to make the image looked natural, we need to retain a small amount of haze by using a constant $\omega$ (0< $\omega$ <1):\begin{equation}
+\tilde{t}(x)=1-\omega \min\limits_{y\in\Omega(x)}(\min\limits_{c}\frac{I^{c}(y)}{A^c})
+\end{equation}
+And inadvertently, we compensate for the under-estimation of $\tilde{t}(x)$ by multiplying $\omega$. When $\omega$ = 0.95, the transmission map is shown as Fig.~\ref{trans}.
+ \begin{figure}[htbp]
+ \centering{}
+ \subfloat[]{\begin{minipage}{0.5\linewidth}
+\includegraphics[width=0.9\linewidth]{cones.jpg}\\
+ \end{minipage}}
+ \hfill
+\subfloat[]{\begin{minipage}{0.5\linewidth}
+\includegraphics[width=0.9\linewidth]{trans3_3.png}\\
+\end{minipage}}
+ \caption{(a) haze image, (b) transmissinon map (3$\times$3)}
+\label{trans}
+\end{figure} 
+
  \bibliographystyle{ieee}
  \bibliography{single}
 \end{document}
