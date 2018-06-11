@@ -1,0 +1,42 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{cvpr}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{subfig}
+
+\graphicspath{{/home/li/图片/}}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fontspec}
+
+\usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
+
+\cvprfinalcopy % *** Uncomment this line for the final submission
+
+\def\cvprPaperID{****} % *** Enter the CVPR Paper ID here
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+\ifcvprfinal\pagestyle{empty}\fi
+\setcounter{page}{1}
+
+\begin{document}
+
+\author{Qingyun Li\\\\
+June 10, 2018}        
+\title{Super Resolution}
+
+\maketitle
+\section{Naural net and traditional classifiers}
+\par Block diagrams of traditional and neural net classifiers are presented in Fig.~\ref{block} Both types of classifiers determine which of M classes is most representative of an unknown static input pattern containing N input elements. In a speech, recognizer the inputs might be the output envelope values from a filter bank spectral analyzer sampled at one time instant and the classes might represent different vowels. In an image classifier the inputs might be the gray scale level of each pixel for a picture and the classes might represent different objects.
+\par The top of the figure is the traditional classifier and the bottom of the figure is an adaptive nerual net classifier. The troditional classifier contains two stages. The first computes matching scores for each class and the second selects the class with the maximum score. And multivariate gaussian distributions are often used leading to relatively simple algorithms for computing matching scores~\cite{elman1988learning}.
+ \begin{figure}[htbp]
+ \centering{}
+\includegraphics[width=0.7\linewidth]{BlockDiagrams.png}\\
+ \caption{Block diagrams}
+\label{block}
+\end{figure}
+ \bibliographystyle{ieee}
+ \bibliography{single}
+\end{document}

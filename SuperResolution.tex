@@ -1,0 +1,40 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{cvpr}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{subfig}
+
+\graphicspath{{/home/li/图片/}}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fontspec}
+
+\usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
+
+\cvprfinalcopy % *** Uncomment this line for the final submission
+
+\def\cvprPaperID{****} % *** Enter the CVPR Paper ID here
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+\ifcvprfinal\pagestyle{empty}\fi
+\setcounter{page}{1}
+
+\begin{document}
+
+\author{Qingyun Li\\\\
+June 10, 2018}        
+\title{Super Resolution}
+
+\maketitle
+
+\begin{abstract}
+ \par
+  Image resolution is an important indicator of image detail rendering capability. It describes the number of pixels contained in an image. However, due to the limitations of the hardware conditions of the image acquisition system, we can't acquire the high-resolution image. Image super resolution refers to the recovery of high-resolution image from low-resolution image or image sequence. There are three methods in general, interpolation, reconstrution and learning.  High resolution means that the pixels in the image are high in density and can provide more detail, and these are very helpful. For example, the doctors can make a correct diagnosis according to the high resolution medical resolutions. And we can distinguish similar objects from the high-resolution satellite images. Therefore, the performance of pattern recognition will be greatly improved. So it is critical to research the high-resolution images. This paper will focus on the method based on learning.
+\end{abstract}
+\section{Artificial neural net}
+ \par Artificial neural net models have been studied for many years in the hope of achiving human-like performance in the fields of speech and image recognition. These models are composed of many nonlinear computational elements operating in parallel and arranged in patterns reminiscent of biological neural nets. Computational elements or nodes are connected via weights that are typically adapted during use to improve performance. There has been a recent resurgence in the field of artificial nerual nets caused by new net topologies and algorithms, analog VLSI implementation techniques, and the belief that massive parallelism is essential for high performance speech and image recognitio~\cite{lippmann1987introduction}.
+ \bibliographystyle{ieee}
+ \bibliography{single}
+\end{document}
