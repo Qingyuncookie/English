@@ -24,7 +24,7 @@
 \begin{document}
 
 \author{Qingyun Li\\\\
-June 11, 2018}        
+June 13, 2018}        
 \title{Super Resolution}
 
 \maketitle
@@ -53,6 +53,14 @@ June 11, 2018}
 \includegraphics[width=0.7\linewidth]{Hamming.png}\\
  \caption{Hamming net}
 \label{Hamming}
+\end{figure}
+\subsection{Selecting or enhance the maximum input}
+\par The need to select or enhance the input with a maximum value occurs frequently in classification problems. Several different neural nets can perform this operation. The MAXNET described above uses heavy lateral inhibition similar to that used in other net designs where a maximum was desired~\cite{hopfield1986computing}. These designs creat a "winner-take-all" type of net whose design mimics the heavy use of lateral inhibition evident in the biological neural nets of the hunman brain~\cite{kandel2000principles}. Other techniques to pick a maximum are also possible~\cite{lippmann1987comparison}. One is illustrated in Fig.~\ref{comparator}. This figure shows a comparator subnet which is described in~\cite{martin1970acoustic}. It uses threshold logic nodes to pick the maximum of two inputs and then feeds this maximum value forword. This net is useful when the maximum value must be passed unaltered to the output. 
+\begin{figure}[htbp]
+ \centering{}
+\includegraphics[width=0.7\linewidth]{comparator.png}\\
+ \caption{A comparator subnet that selects the maximum of two analog inputs.}
+\label{comparator}
 \end{figure}
  \bibliographystyle{ieee}
  \bibliography{single}
