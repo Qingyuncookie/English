@@ -1,0 +1,42 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{cvpr}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{subfig}
+
+\graphicspath{{/home/li/图片/}}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fontspec}
+
+\usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
+
+\cvprfinalcopy % *** Uncomment this line for the final submission
+
+\def\cvprPaperID{****} % *** Enter the CVPR Paper ID here
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+\ifcvprfinal\pagestyle{empty}\fi
+\setcounter{page}{1}
+
+\begin{document}
+
+\author{Qingyun Li\\\\
+June 15, 2018}        
+\title{Super Resolution}
+
+\maketitle
+
+\subsection{Multi-layer perceptron}
+\par Multi-layer perceptrons are feed-forward nets with one or more layers of nodes between the input and the output nodes. These additional layers contain hidden units or nodes that are not directly connected to both the input and the output nodes. A three-layer perceptron with two layers of hidden units is shown in Fig. \ref{multi}. Multi-layer perceptrons overcome many of limitations of single-layer perceptrons, but were generally not used in the past because effective training algorithms were not availible. This has recently changed with the development of new training algorithms~\cite{Rumelhart1988Learning}. Although it can't be proven that these algorithms converge as with single layer perceptions, they have shown to be successful for many problems of interest~\cite{Rumelhart1988Learning}.
+\begin{figure}[htbp]
+ \centering{}
+\includegraphics[width=0.7\linewidth]{multilayer.png}\\
+ \caption{A three-layer perceptron.}
+\label{multi}
+\end{figure}
+ \bibliographystyle{ieee}
+ \bibliography{single}
+\end{document}
