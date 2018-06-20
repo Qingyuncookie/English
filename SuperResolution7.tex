@@ -1,0 +1,43 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{cvpr}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{subfig}
+
+\graphicspath{{/home/li/图片/}}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fontspec}
+
+\usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
+
+\cvprfinalcopy % *** Uncomment this line for the final submission
+
+\def\cvprPaperID{****} % *** Enter the CVPR Paper ID here
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+\ifcvprfinal\pagestyle{empty}\fi
+\setcounter{page}{1}
+
+\begin{document}
+
+\author{Qingyun Li\\\\
+June 20, 2018}        
+\title{Super Resolution}
+
+\maketitle
+
+\subsection{Kohonen's self organizing feature maps}
+\par One important organizing principle of sensory pathways in the brain is that the placement of neurons is orderly and often reflects some physical characteristic of the external stimulus being sensed~\cite{kandel2000principles}. For example, at each level of the auditory pathway, nerve cells and fibers are arranged anatomically in relation to the frequency which elicits the greatest response in each neuron. This tonotopic organization in the auditory cortex~\cite{kandel2000principles}. Although much of the lowlevel organization is genetically pre-determined, it is likely that some of the organization at higher levels is created during learning by algorithms which promote self-organization. Kohonen~\cite{Kohonen1984Self}presents one such algorithm which produces what he calls self-organizing feature maps similar to those that occur in the brain.
+\par Kohonen's algorithm creates a vector quantizer by adjusting weights from commom input nodes to M output nodes arranged in a two dimensional grid as shown in Fig.\ref{17}. 
+\begin{figure}[htbp]
+ \centering{}
+\includegraphics[width=0.7\linewidth]{Koh.png}\\
+ \caption{Two-dimensional array of output nodes used to form feature maps.}
+\label{17}
+\end{figure}
+ \bibliographystyle{ieee}
+ \bibliography{single}
+\end{document}
