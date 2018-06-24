@@ -1,0 +1,43 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{cvpr}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{subfig}
+
+\graphicspath{{/home/li/图片/}}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fontspec}
+
+\usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
+
+\cvprfinalcopy % *** Uncomment this line for the final submission
+
+\def\cvprPaperID{****} % *** Enter the CVPR Paper ID here
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+\ifcvprfinal\pagestyle{empty}\fi
+\setcounter{page}{1}
+
+\begin{document}
+
+\author{Qingyun Li\\\\
+June 24, 2018}        
+\title{Super Resolution}
+
+\maketitle
+
+\section{The hopfield net}
+\par Recently, I learned a kind of neural nets. Today, we introduce a net named the hopfield net. The hopfield net is normally used with binary inputs. It is most appropriate when exact binary representations are possible as with black and white images where input elements are pixel values, or with ASCII text where input values could represent bits in the 8-bit ASCII representation of each character. And it's less appropriate when input values are actually continuous, because a fundamental representation problem must be addressed to convert the analog quantities to binary values. 
+\par Hopfield rekindled interest in neural nets by his extensive work on different versions of the Hopfield net~\cite{hopfield1986computing}. This net can be used as an associative memory or to solve optimization problems. One version of the original net which can be used as a content addressable memory is shown in Figure~\ref{hop}, has N nodes containing hard limiting nonlinearities and binary inputs and outputs taking on the values +1 and -1.
+\begin{figure}[htbp]
+ \centering{}
+\includegraphics[width=0.7\linewidth]{hopfield.png}\\
+ \caption{A Hopfield neural net.}
+\label{hop}
+\end{figure}
+ \bibliographystyle{ieee}
+ \bibliography{single}
+\end{document}
