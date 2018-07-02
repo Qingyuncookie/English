@@ -1,0 +1,10 @@
+\begin{thebibliography}{1}\itemsep=-1pt
+
+\bibitem{Hinton2012Improving}
+G.~E. Hinton, N.~Srivastava, A.~Krizhevsky, I.~Sutskever, and R.~R.
+  Salakhutdinov.
+\newblock Improving neural networks by preventing co-adaptation of feature
+  detectors.
+\newblock {\em Computer Science}, pages 212--223, 2012.
+
+\end{thebibliography}
