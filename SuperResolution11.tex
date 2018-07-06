@@ -22,7 +22,7 @@
 \begin{document}
 
 \author{Qingyun Li\\\\
-June 30, 2018}        
+July 6, 2018}        
 \title{Super Resolution}
 
 \maketitle
@@ -30,7 +30,10 @@ June 30, 2018}
 \section{Tntroduction}
 \par The  framework can yield specific training algorithms for many kinds of model and optimization algorithm. In the article, the authors explore the special case when the generative model generates samples by passing random noise through a multilayer perceptron, and this discriminative model is also a multilayer perceptron. We refer to this special case as adversarial nets. In this case, we can train both models and using only the highly successful backpropagation and dropout algorithms~\cite{Hinton2012Improving} and sample from the generative model using only forward propagation. No approximate inference or Markov chains are necessary.
 \section{Related work}
-\par An alternative to directed graphicalmodels with latent variables are undirected graphical models with latent variables, such as restricted Boltzmann machines (RBMs)~\cite{smolensky1986information}, deep Boltzman machines (DBMs)~\cite{salakhutdinov2010efficient} and their numerous variants. The interactions within such models are represented as the product of unnormalized potential functions, normalized by a global summation over all states of the random variables. This quantity and its gradient are intracble for all but the most trivial instances, although they can be estimated by Markov chain Monte Carlo (MCMC) methods. Mixing poses a significant problem for learning algorithms that rely on MCMC~\cite{bengio2013better}.
+\par An alternative to directed graphicalmodels with latent variables are undirected graphical models with latent variables, such as restricted Boltzmann machines (RBMs)~\cite{smolensky1986information}, deep Boltzman machines (DBMs)~\cite{salakhutdinov2010efficient} and their numerous variants. The interactions within such models are represented as the product of unnormalized potential functions, normalized by a global summation over all states of the random variables. This quantity and its gradient are intracble for all but the most trivial instances, although they can be estimated by Markov chain Monte Carlo (MCMC) methods\footnote{A Markov chanin is a stochastic model describing a sequence of possible events in which the probability of each event depends only on the state attained in the previous event. Roughly speaking, a process satisfies the Markov property if one can make predictions for the future based only on its present state just as well as one could knowing the process's full history. In statistics, MCMC methods comprise a class of algorithms for sampling from a probability distribution. By constructing a Markov chain that has the desired distribution as its equilibrium distribution, one can obtain a sample of the desired distribution by observing the chain after a number of steps. The more steps there are, the more closely the distribution of the sample matches the actual desired distribution.}. Mixing poses a significant problem for learning algorithms that rely on MCMC~\cite{bengio2013better}.
+\par Deep belief networks (DBNs) are hybrid models containing a single undirected layer and several directed layers. While a fast approximate layer-wise training criterion exists, DBNs incur the computational difficulties associated with both undirected and directed models.
+\par Alternative criteria that do not approximate or bound the log-likelihood have also been proposed, such as score matching~\cite{Hyv2005Estimation} and noise-contrasive estimation (NCE)~\cite{Gutmann2010Noise}.
+
   \bibliographystyle{ieee}
  \bibliography{single}
 \end{document}
