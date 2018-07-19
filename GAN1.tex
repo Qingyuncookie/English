@@ -1,0 +1,52 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{cvpr}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\graphicspath{{/home/li/图片/}}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fontspec}
+
+\usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
+
+\cvprfinalcopy % *** Uncomment this line for the final submission
+
+\def\cvprPaperID{****} % *** Enter the CVPR Paper ID here
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+\ifcvprfinal\pagestyle{empty}\fi
+\setcounter{page}{1}
+
+\begin{document}
+
+\author{Qingyun Li\\\\
+July 12, 2018}        
+\title{GAN}
+
+\maketitle
+
+\section{Introduction}
+\section{Related work}
+\section{Adversarial nets}
+\section{Theoretical results}
+\par The generator G implicitly defines a probability distribution $p_{g}$ as the distribution of the samples G(z) obtained when z$\sim$p(z). Therefore, we should like Algorithm 1 to converge a good estimator of $p_{data}$, if given enough capacity and training time. The result of this section are done in a nonparametric setting, e.g.\ we represent a model with infinite capacity by studying convergence in the space of probability density functions.
+\subsection{Global optimality of $p_{g}=p_{data}$}
+\par At first the authors consider the optimal discriminator D for any given generator G.
+\par $\mathbf{Proposition 1.}$ For G fixed, the optimal discriminator D is
+\begin{equation}
+D_{G}^{*}(x)=\frac{p_{data}(x)}{p_{data}(x)+p_{g}(x)}
+\end{equation}
+\par The training criterion for the discriminator D, given any generator D, given any generator G, is to maximize the quantity V(G,D)
+\begin{equation}
+\begin{split}
+V(G,D)&=\int_{x}p_{data}(x)log(D(x))dx
++\int_{z}p_{z}(z)log(1-D(g(z)))dz\\
+&=\int_{x}p_{data}(x)log(D(x))
++p_{g}(x)log(1-D(x))dx
+\end{split}
+\end{equation}
+  \bibliographystyle{ieee}
+ \bibliography{single}
+\end{document}
