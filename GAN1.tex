@@ -22,7 +22,7 @@
 \begin{document}
 
 \author{Qingyun Li\\\\
-July 12, 2018}        
+July 20, 2018}        
 \title{GAN}
 
 \maketitle
@@ -41,9 +41,9 @@ D_{G}^{*}(x)=\frac{p_{data}(x)}{p_{data}(x)+p_{g}(x)}
 \par The training criterion for the discriminator D, given any generator D, given any generator G, is to maximize the quantity V(G,D)
 \begin{equation}
 \begin{split}
-V(G,D)&=\int_{x}p_{data}(x)log(D(x))dx
+V(G,D)=\int_{x}p_{data}(x)log(D(x))dx\\
 +\int_{z}p_{z}(z)log(1-D(g(z)))dz\\
-&=\int_{x}p_{data}(x)log(D(x))
+=\int_{x}p_{data}(x)log(D(x))\\
 +p_{g}(x)log(1-D(x))dx
 \end{split}
 \end{equation}
