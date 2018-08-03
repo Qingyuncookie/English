@@ -1,0 +1,49 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{cvpr}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
+
+\cvprfinalcopy % *** Uncomment this line for the final submission
+
+\def\cvprPaperID{****} % *** Enter the CVPR Paper ID here
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+\ifcvprfinal\pagestyle{empty}\fi
+\setcounter{page}{1}
+
+\begin{document}
+
+\author{Qingyun Li\\\\
+August 3, 2018}        
+\title{Underwater Image Restoration}
+
+\maketitle
+
+\section{Introduction}
+\par Restoring underwater image is similar to restoring haze image, they are known to be ill-posed. Images captured underwater are usually degraded due to the effects of absorption and scattering. Degraded underwater images show some limitations when they are uesd for display and analysis. Because underwater images with low contrast and color cast decrease the accuracy rate of underwater object detection and marine biology recognition. To overcome those limitations, the authors proposed a systematic underwater image enhancement methods which includes an underwater image dehazing algorithm and a contrast enahncement algorithm~\cite{Li2016Underwater}. Built on a minimum information loss principle, an effective underwater image dehazing algorithm is proposed to restore the visibility, color and natural appearance of underwater images. 
+\section{Ralated work}
+\par Numerous underwater image enhancement and restoration methods have emerged in the last few years. Traditional image enhancement methods, like histogram equalization, CLAHE, generalized unsharp masking are effective for common images. However, traditional image enhancement methods can not adaptively compensate the contrast degradation of underwater images. We found that direct applying traditional image enhancement methods to degraded underwater images ignores the fact that contrast degradation of underwater images is proportional to the ditance of object-camera. And the propagation of light in the water is shown at the Figure.~\ref{pro}.
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[scale=0.2]{propagation.png}
+	\end{center}
+	\caption{Propagation of Light in the Water}
+	\label{pro}
+\end{figure}
+\par  We all know the dark channel prior proposed by Kaimming He, it is used to single haze removal. And several methods are based on the extension and modification of He's method which could used to underwater image restoration. But because the wavelength of red light is long, so the red light is disappeared when the depth of water is more than five meters, as is shown at Figure.~\ref{light}. So when we use the dark channel prior to do the underwater image restoration, we acquire the dark channel just from the green and blue channel. 
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[scale=0.2]{light.png}
+	\end{center}
+	\caption{Schematic of Light Absorption.}
+	\label{light}
+\end{figure}
+  \bibliographystyle{ieee}
+ \bibliography{single}
+\end{document}
