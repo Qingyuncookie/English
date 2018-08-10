@@ -2,6 +2,7 @@
 
 \usepackage{cvpr}
 \usepackage{times}
+\usepackage{cite}
 \usepackage{epsfig}
 \usepackage{graphicx}
 \usepackage{amsmath}
@@ -20,7 +21,7 @@
 \begin{document}
 
 \author{Qingyun Li\\\\
-August 3, 2018}        
+August 10, 2018}        
 \title{Underwater Image Restoration}
 
 \maketitle
@@ -44,6 +45,29 @@ August 3, 2018}
 	\caption{Schematic of Light Absorption.}
 	\label{light}
 \end{figure}
+
+\section{DCP}
+\par Recently, I read a paper which apply the dark channel prior to underwater image restoration, and in order to solve the problem which proposed at the last segment, the authors proposed a method corrected the red channel which can be interpreted as a variant of the dark channel method used for images degraded by the atmosphere when exposed to haze.
+\par The main model is the transmission estimate from Red Channel, and in this paper, t(x) is estimated as:
+\begin{equation}
+\begin{aligned}
+\tilde{t}(x) = 1-min(\frac{min\limit_{y\in\Omega(x)}(1-I^{R}(y))}{1-A^{R}}, \frac{min\limit_{y\in\Omega(x)}I^{G}(y)}{A^{G}},\\ \frac{min\limit_{y\in\Omega(x)}I^{B}(y)}{A^{B}}) 
+\end{aligned}
+\end{equation}
+\par In fact, there is another method which is estimate the transmission from the green and the blue channel, and in order to compare the red-channel correction and this method, I reappeared the code and acquire the outcome, we can see it at the Figure.~\ref{rc} and \ref{dcp}:
+\begin{figure}[htbp]
+		\centering{}
+		\includegraphics[width=0.9\linewidth]{dcp.jpg}\\
+		\caption{DCP outcome}
+		\label{dcp}
+\end{figure}
+\begin{figure}
+		\centering{}
+		\includegraphics[width=0.9\linewidth]{dcp(rc).jpg}\\
+		\caption{Red-Channel correction outcome}
+		\label{rc} 	
+\end{figure}
+\par We can see that after the red-channel corection, the red rock phenomenon has disappeared, and the holistic color is less green, the edge is more clearly. So I think this method may be more useful than dcp when we do the object detection.
   \bibliographystyle{ieee}
- \bibliography{single}
+  \bibliography{single}
 \end{document}
